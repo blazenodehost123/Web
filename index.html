@@ -1,48 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RedStoneNovaCloud</title>
+
 <style>
 body {
-font-family: Arial;
-background: #0f172a;
-color: white;
-text-align: center;
 margin: 0;
-padding: 0;
+font-family: 'Segoe UI', sans-serif;
+background: linear-gradient(135deg,#0f172a,#020617);
+color: white;
+scroll-behavior: smooth;
 }
 
 header {
-background: #7c3aed;
-padding: 20px;
-font-size: 28px;
-font-weight: bold;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 40px;
+background: rgba(0,0,0,0.6);
+position: sticky;
+top: 0;
 }
 
-button {
-padding: 12px 20px;
-margin: 10px;
-border: none;
+header h2 {
+color: #8b5cf6;
+}
+
+nav a {
+margin: 0 10px;
+text-decoration: none;
+color: white;
+font-weight: 500;
+}
+
+nav a:hover {
+color: #8b5cf6;
+}
+
+section {
+padding: 80px 20px;
+text-align: center;
+}
+
+.hero {
+background: radial-gradient(circle at top,#1e1b4b,#0f172a);
+}
+
+.hero h1 {
+font-size: 42px;
+margin-bottom: 15px;
+}
+
+.btn {
+padding: 12px 25px;
 border-radius: 8px;
+border: none;
 cursor: pointer;
-font-size: 16px;
+font-size: 15px;
+margin: 10px;
+background: linear-gradient(90deg,#7c3aed,#06b6d4);
+color: white;
 }
 
-.discord { background: #5865F2; color: white; }
-.plan { background: #22c55e; color: white; }
-
-.section { display: none; padding: 20px; }
+.plans-container {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 20px;
+}
 
 .plan-card {
 background: #1e293b;
-margin: 10px;
-padding: 15px;
-border-radius: 10px;
+padding: 20px;
+width: 280px;
+border-radius: 15px;
+box-shadow: 0 0 20px rgba(139,92,246,0.3);
+transition: 0.3s;
 }
 
-.category-btn {
-background: #334155;
-color: white;
+.plan-card:hover {
+transform: translateY(-5px);
+}
+
+.plan-card h3 {
+color: #8b5cf6;
+}
+
+footer {
+padding: 20px;
+background: #0f172a;
+text-align: center;
+font-size: 14px;
+opacity: 0.7;
 }
 </style>
 </head>
@@ -50,81 +101,83 @@ color: white;
 <body>
 
 <header>
-🔥 RedStoneNovaCloud Hosting 🔥
+<h2>🔥 RedStoneNovaCloud</h2>
+<nav>
+<a href="#home">Home</a>
+<a href="#minecraft">Minecraft</a>
+<a href="#vps">VPS</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
-<br>
+<section id="home" class="hero">
+<h1>Reliable & Affordable Hosting</h1>
+<p>High performance Minecraft & VPS Hosting with modern infrastructure.</p>
+<button class="btn" onclick="window.location.href='#minecraft'">Explore Plans</button>
+<button class="btn" onclick="window.location.href='https://discord.gg/SNUH6ZFx5'">Join Discord</button>
+</section>
 
-<button class="discord" onclick="window.location.href='https://discord.gg/SNUH6ZFx5'">
-Join Discord
-</button>
+<section id="minecraft">
+<h1>🎮 Minecraft Hosting</h1>
 
-<button class="plan" onclick="showPlans()">
-View Plans
-</button>
-
-<div id="plans" class="section">
-
-<h2>Choose Category</h2>
-
-<button class="category-btn" onclick="showMC()">Minecraft Plans</button>
-<button class="category-btn" onclick="showVPS()">VPS Plans</button>
-
-<div id="mc" class="section">
-
-<h2>🎮 Minecraft Hosting</h2>
-
-<h3>Budget Plan</h3>
-<div class="plan-card">
-4GB RAM | 10GB SSD | 1 Core <br>
-FREE PLAN <br>
-Create Support Ticket to Claim
-</div>
-
-<h3>Performance Plans</h3>
-
-<div class="plan-card">Spark Plan – 2GB RAM – ₹200</div>
-<div class="plan-card">Ignite Plan – 4GB RAM – ₹450</div>
-<div class="plan-card">Boost Plan – 6GB RAM – ₹500</div>
-<div class="plan-card">Pulse Plan – 8GB RAM – ₹599</div>
-<div class="plan-card">Blaze Plan – 10GB RAM – ₹650</div>
-<div class="plan-card">Storm Plan – 12GB RAM – ₹790</div>
-<div class="plan-card">Nova Plan – 16GB RAM – ₹899</div>
-<div class="plan-card">Fusion Plan – 20GB RAM – ₹1025</div>
-<div class="plan-card">Vortex Plan – 24GB RAM – ₹1305</div>
-
-</div>
-
-<div id="vps" class="section">
-<h2>💻 VPS Hosting</h2>
+<div class="plans-container">
 
 <div class="plan-card">
-⚠️ Budget VPS Plans Currently Not Available
+<h3>FREE PLAN</h3>
+<p>4GB RAM<br>10GB SSD<br>1 Core CPU</p>
+<button class="btn" onclick="window.location.href='https://discord.gg/SNUH6ZFx5'">Buy Now</button>
 </div>
 
 <div class="plan-card">
-⚠️ Performance VPS Plans Coming Soon
+<h3>SPARK</h3>
+<p>2GB RAM<br>100% CPU<br>₹200</p>
+<button class="btn" onclick="window.location.href='https://discord.gg/SNUH6ZFx5'">Buy Now</button>
+</div>
+
+<div class="plan-card">
+<h3>IGNITE</h3>
+<p>4GB RAM<br>150% CPU<br>₹450</p>
+<button class="btn" onclick="window.location.href='https://discord.gg/SNUH6ZFx5'">Buy Now</button>
+</div>
+
+<div class="plan-card">
+<h3>BOOST</h3>
+<p>6GB RAM<br>200% CPU<br>₹500</p>
+<button class="btn" onclick="window.location.href='https://discord.gg/SNUH6ZFx5'">Buy Now</button>
 </div>
 
 </div>
+</section>
 
+<section id="vps">
+<h1>💻 VPS Hosting</h1>
+
+<div class="plans-container">
+
+<div class="plan-card">
+<h3>Budget VPS</h3>
+<p>Currently Not Available</p>
+<button class="btn" onclick="window.location.href='https://discord.gg/SNUH6ZFx5'">Join Discord</button>
 </div>
 
-<script>
-function showPlans() {
-document.getElementById("plans").style.display = "block";
-}
+<div class="plan-card">
+<h3>Performance VPS</h3>
+<p>Coming Soon</p>
+<button class="btn" onclick="window.location.href='https://discord.gg/SNUH6ZFx5'">Join Discord</button>
+</div>
 
-function showMC() {
-document.getElementById("mc").style.display = "block";
-document.getElementById("vps").style.display = "none";
-}
+</div>
+</section>
 
-function showVPS() {
-document.getElementById("vps").style.display = "block";
-document.getElementById("mc").style.display = "none";
-}
-</script>
+<section id="contact">
+<h1>📩 Contact Us</h1>
+<p>Need custom plans? Join our Discord server.</p>
+<button class="btn" onclick="window.location.href='https://discord.gg/SNUH6ZFx5'">Open Discord</button>
+</section>
+
+<footer>
+© 2026 RedStoneNovaCloud — All Rights Reserved
+</footer>
 
 </body>
 </html>
